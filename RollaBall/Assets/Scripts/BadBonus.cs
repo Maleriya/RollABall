@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Assets.Scripts
 {
@@ -6,6 +8,13 @@ namespace Assets.Scripts
     {
         private float _lengthFlay;
         private float _speedRotation;
+
+        private event EventHandler<CaughtPlayerEventArgs> _caughtPlayer;
+        public event EventHandler<CaughtPlayerEventArgs> CaughtPlayer
+        {
+            add { _caughtPlayer += value; }
+            remove { _caughtPlayer -= value; }
+        }
 
         private void Awake()
         {
@@ -15,7 +24,8 @@ namespace Assets.Scripts
 
         protected override void Interaction()
         {
-            // Destroy player
+            _caughtPlayer?.Invoke(this.gameObject, new CaughtPlayerEventArgs(_color));
+
         }
 
         public void Flay()

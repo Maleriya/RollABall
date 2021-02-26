@@ -4,6 +4,7 @@ namespace Assets.Scripts
 {
     public abstract class InteractiveObject : MonoBehaviour, IInteractable
     {
+        protected Color _color;
         public bool IsInteractable { get; } = true;
         protected abstract void Interaction();
 
@@ -14,9 +15,10 @@ namespace Assets.Scripts
 
         public void Action()
         {
+            _color = Random.ColorHSV();
             if (TryGetComponent(out Renderer renderer))
             {
-                renderer.material.color = Random.ColorHSV();
+                renderer.material.color = _color;
             }
         }
 
