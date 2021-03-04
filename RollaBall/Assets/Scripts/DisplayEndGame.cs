@@ -8,18 +8,15 @@ namespace Assets.Scripts
     {
         private Text _finishGameLabel;
 
-        public DisplayEndGame(Text finishGameLabel)
+        public DisplayEndGame(GameObject endGame)
         {
-            _finishGameLabel = finishGameLabel; 
+            _finishGameLabel = endGame.GetComponentInChildren<Text>();
             _finishGameLabel.text = String.Empty;
         }
 
-        public void GameOver(object o, CaughtPlayerEventArgs args)
+        public void GameOver(string name, Color color)
         {
-            if (o == null || args == null)
-                throw new Exception("Для вывода сообщения о кнце игры не хватает данных.");
-
-            _finishGameLabel.text = $"Вы проиграли. Вас убил {((GameObject)o).name} {args.Color} цвета";
+            _finishGameLabel.text = $"Вы проиграли. Вас убил {name} {color} цвета";
         }
     }
 
