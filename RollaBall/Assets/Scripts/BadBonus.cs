@@ -1,31 +1,31 @@
 ﻿using System;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using static UnityEngine.Random;
 
 namespace Assets.Scripts
 {
     public sealed class BadBonus : InteractiveObject, IFlay, IRotation
     {
+        public event Action<string, Color> OnCaughtPlayerChange = delegate (string str, Color color) { };
         private float _lengthFlay;
         private float _speedRotation;
 
-        private event EventHandler<CaughtPlayerEventArgs> _caughtPlayer;
-        public event EventHandler<CaughtPlayerEventArgs> CaughtPlayer
-        {
-            add { _caughtPlayer += value; }
-            remove { _caughtPlayer -= value; }
-        }
-
         private void Awake()
         {
-            _lengthFlay = Random.Range(1.0f, 5.0f);
-            _speedRotation = Random.Range(10.0f, 50.0f);
+            _lengthFlay = Range(1.0f, 5.0f);
+            _speedRotation = Range(10.0f, 50.0f);
         }
 
         protected override void Interaction()
         {
-            _caughtPlayer?.Invoke(this.gameObject, new CaughtPlayerEventArgs(_color));
+            OnCaughtPlayerChange.Invoke(gameObject.name, _color);
+        }
 
+        public override void Execute()
+        {
+            if (!IsInteractable) { return; }
+            Flay();
+            Rotation();
         }
 
         public void Flay()
@@ -40,4 +40,5 @@ namespace Assets.Scripts
             transform.Rotate(Vector3.up * (Time.deltaTime * _speedRotation), Space.World);
         }
     }
+
 }

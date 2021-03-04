@@ -1,24 +1,22 @@
 ﻿using UnityEngine;
+using static UnityEngine.Random;
 
 namespace Assets.Scripts
 {
-    public abstract class InteractiveObject : MonoBehaviour, IInteractable
+    public abstract class InteractiveObject : MonoBehaviour, IExecute
     {
         protected Color _color;
-        public bool IsInteractable { get; } = true;
-        protected abstract void Interaction();
 
-        private void Start()
-        {
-            Action();
-        }
+        private bool _isInteractable;
 
-        public void Action()
+        protected bool IsInteractable
         {
-            _color = Random.ColorHSV();
-            if (TryGetComponent(out Renderer renderer))
+            get { return _isInteractable; }
+            private set
             {
-                renderer.material.color = _color;
+                _isInteractable = value;
+                GetComponent<Renderer>().enabled = _isInteractable;
+                GetComponent<Collider>().enabled = _isInteractable;
             }
         }
 
@@ -29,9 +27,20 @@ namespace Assets.Scripts
                 return;
             }
             Interaction();
-            Destroy(gameObject);
+            IsInteractable = false;
         }
 
-    }
+        protected abstract void Interaction();
+        public abstract void Execute();
 
+        private void Start()
+        {
+            IsInteractable = true;
+            _color = ColorHSV();
+            if (TryGetComponent(out Renderer renderer))
+            {
+                renderer.material.color = _color;
+            }
+        }
+    }
 }
