@@ -9405,6 +9405,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7adf4dec0e22ef64ca987c51c37967c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isAllowScaling: 0
+  ActiveDis: 0
 --- !u!65 &1241997937
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13285,7 +13287,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6bddf52d6324546aabf0bb6fce494f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: 0
+  _isAllowScaling: 1
+  ActiveDis: 0.12
+  Point: 6
 --- !u!136 &1887399365
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14264,6 +14268,33 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2074653365}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2111088395 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 131857661120266939, guid: d8bfc9e882ac2924781e43783abeeec0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1782614952}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2111088396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111088395}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dc767be98435d34aa4eada05e77fee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TestPublic: 0
+  SerializableGameObject:
+    X: 0
+    Y: 0
+    Z: 0
+  _testPrivate: 7
+  SecondTest: 22
+  _testMultiline: 
+  _testTextArea: 
 --- !u!1001 &2124413862
 PrefabInstance:
   m_ObjectHideFlags: 0
