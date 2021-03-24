@@ -64,29 +64,42 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BadBonus.cs" />
+    <Compile Include="Assets\Scripts\BinarySerializationData.cs" />
     <Compile Include="Assets\Scripts\CaughtPlayerEventArgs.cs" />
     <Compile Include="Assets\Scripts\Controllers\CameraController.cs" />
     <Compile Include="Assets\Scripts\Controllers\GameController.cs" />
     <Compile Include="Assets\Scripts\Controllers\InputController.cs" />
+    <Compile Include="Assets\Scripts\Crypto.cs" />
     <Compile Include="Assets\Scripts\DisplayBonuses.cs" />
     <Compile Include="Assets\Scripts\DisplayEndGame.cs" />
     <Compile Include="Assets\Scripts\GoodBonus.cs" />
     <Compile Include="Assets\Scripts\InteractiveObject.cs" />
     <Compile Include="Assets\Scripts\Interface\IAction.cs" />
+    <Compile Include="Assets\Scripts\Interface\IData.cs" />
     <Compile Include="Assets\Scripts\Interface\IExecute.cs" />
     <Compile Include="Assets\Scripts\Interface\IFlay.cs" />
     <Compile Include="Assets\Scripts\Interface\IFlicker.cs" />
     <Compile Include="Assets\Scripts\Interface\IInteractable.cs" />
     <Compile Include="Assets\Scripts\Interface\IMoving.cs" />
     <Compile Include="Assets\Scripts\Interface\IRotation.cs" />
+    <Compile Include="Assets\Scripts\JsonData.cs" />
     <Compile Include="Assets\Scripts\ListExecuteObject.cs" />
     <Compile Include="Assets\Scripts\ListInteractableObject.cs" />
+    <Compile Include="Assets\Scripts\MiniMap.cs" />
     <Compile Include="Assets\Scripts\Model\PlayerBallRB.cs" />
     <Compile Include="Assets\Scripts\Model\PlayerBase.cs" />
     <Compile Include="Assets\Scripts\MoveCC.cs" />
     <Compile Include="Assets\Scripts\MoveRB.cs" />
+    <Compile Include="Assets\Scripts\PlayerPrefsData.cs" />
     <Compile Include="Assets\Scripts\PlayerType.cs" />
+    <Compile Include="Assets\Scripts\Radar.cs" />
+    <Compile Include="Assets\Scripts\RadarObj.cs" />
     <Compile Include="Assets\Scripts\Reference.cs" />
+    <Compile Include="Assets\Scripts\SaveDataRepository.cs" />
+    <Compile Include="Assets\Scripts\SavedData.cs" />
+    <Compile Include="Assets\Scripts\SerializableXMLData.cs" />
+    <Compile Include="Assets\Scripts\StreamData.cs" />
+    <Compile Include="Assets\Scripts\XMLData.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
